@@ -13,3 +13,11 @@ export const LibraryInput = styled.input`
     font-style: italic;
   }
 `
+
+export const MessageWrapper = styled.div`
+  color: orangered;
+  text-align: center;
+  padding-bottom: 20px;
+  font-style: italic;
+  font-family: Calibri, sans-serif;
+`

@@ -1,32 +1,29 @@
 import React from "react";
 import TranslateButtons from "./TranslateButtons";
-import {Box, Button, Typography} from "@material-ui/core";
+import {useTranslation} from "react-i18next";
+import {Box, Typography} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
 import {Icon} from '@material-ui/core';
-import Image from 'material-ui-image';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
-import { LibraryInput } from "../../styles/StyledComponents";
-import NpmImage from "../../assets/131029139785_0.png";
+import SearchInput from "./SearchInput";
+
 
 const useStyle = makeStyles({
     header: {
         textAlign: "center",
         padding: "10px"
     },
-    button: {
-        display: "block",
-        margin: "0 auto"
-    },
     icon:{
-        fontSize: "5rem",
-        padding:"10px",
-        marginLeft: "10%"
+        fontSize: "6rem",
+        marginLeft: "10%",
+        width:"80%"
     }
 })
 
 const MaterialHeader = () => {
 
     const classes = useStyle();
+    const {t} = useTranslation();
 
     return (
         <>
@@ -36,24 +33,18 @@ const MaterialHeader = () => {
                 <i className="fab fa-npm"/>
                 </Icon>
                 <Typography variant="h1" color="primary" className={classes.header}>
-                    Best NPM package finder on the WEB
+                    {t("title")}
                 </Typography>
                 <Typography variant="h3" color="secondary" className={classes.header}>
-                    Best NPM package finder on the WEB
+                    {t("description")}
                 </Typography>
                 <Box textAlign="center">
                     <Icon draggable={true}>
                         <ArrowDownwardIcon color="secondary" />
                     </Icon>
                 </Box>
-                <Box textAlign="center" p={3}>
-                    <LibraryInput placeholder="wpisz nazwę biblioteki"/>
-                    <Button color="primary" variant="contained" className={classes.button}>
-                        Szukaj
-                    </Button>
-                </Box>
+                <SearchInput/>
             </Box>
-            <Image src={NpmImage} aspectRatio={8/3}/>
         </>
     )
 }
