@@ -1,5 +1,5 @@
 import React from "react";
-import Main from "./components/Main/Main";
+import Main from "./components/main/Main";
 import MaterialHeader from "./components/header/MaterialHeader";
 import {ThemeProvider} from '@material-ui/core/styles';
 import theme from "./theme/theme";
